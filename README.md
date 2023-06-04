@@ -1,2 +1,2 @@
 # lernfeld6_gigachadbot
-A gigachad who can anwser to all your questions
+A gigachad who can anwser all your questions.
