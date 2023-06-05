@@ -5,7 +5,7 @@ from tkinter import *
 def chat():
     print("Hallo. Wie kann ich behilflich sein?")
 
-    for x in start_dict:
+    for x in dicts:
         print(x)
 
     show_options(input("Eingabe: "), True)
