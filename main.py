@@ -3,7 +3,7 @@ import answer as ans
 from tkinter import *
 
 start_dict = {
-    "Absturz": ans.Answer("Ein Absturz. Welche der folgenden Dinge trifft zu?", ["Meow", "Neow"]),
+    "Absturz": ans.Answer("Ein Absturz. Welche der folgenden Dinge trifft zu?", ["Cursor lädt ohne Ende", "Programm friert ein" "Programm schließt sich"]),
     "Problem bei Login": ans.Answer("Probleme beim Login. Was trifft am ehesten zu?", ["Falscher Nutzername", "Falsche Email"])
 }
 
