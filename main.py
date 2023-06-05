@@ -1,53 +1,32 @@
-import dicts
-import answer as ans
+import dictionaries
 from tkinter import *
 
-start_dict = {
-    "Absturz": ans.Answer("Ein Absturz. Welche der folgenden Dinge trifft zu?", ["Meow", "Neow"]),
-    "Problem bei Login": ans.Answer("Probleme beim Login. Was trifft am ehesten zu?", ["Falscher Nutzername", "Falsche Email"])
-}
 
 def chat():
-    print("Hallo. Wie kann ich behilflich sein?")
+    root = Tk()
+    root.title("Chatbot")
 
-    for x in start_dict:
-        print(x)
+    frame = Frame(master=root, width=750, height=600)
+    frame.pack()
 
-    show_options(input("Eingabe: "), True)
+    start_options = dictionaries.answers["Start"].get_options()
 
-    done = False
+    for option in start_options:
+        print(option)
+        option_button = Button(master=root, text=option, command=lambda: show_options(option, root))
+        option_button.pack()
+    root.mainloop()
 
-    while not done:
-        user_input = input("Eingabe: ")
-
-        if user_input.lower() == "done" or user_input == "":
-            done = True
-            break
-
-        show_options(user_input, False)
         
     
-def show_options(key, start):
-    if start:
-        answer = start_dict[key]
-    else:
-        answer = dicts.answers[key]
+def show_options(key, root):
+    answer = dictionaries.answers[key]
 
     options = answer.get_options()
 
-    for x in options:
-        print(x)
+    for option in options:
+        button = Button(master=root, text=option, command=lambda: show_options(option, root))
+        button.pack()
 
-root = Tk()
-root.title("Chatbot")
 
-frame = Tk.frame(master=root, width=500, height=500, bg='gray')
-frame.pack()
-
-w = Label(root, text="Hello bois")
-
-w.pack()
-
-root.mainloop()
-
-# chat()
+chat()
