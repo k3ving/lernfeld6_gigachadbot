@@ -1,24 +1,26 @@
+import tkinter
 import dictionaries
 from tkinter import *
+from tkinter import scrolledtext
+
 
 def chat():
     root = Tk()
     root.title("Chatbot")
+    window_width = 500
+    window_height = 400
+    root.geometry(f"{window_width}x{window_height}")
+    root.resizable(False, False)
 
-    frame = Frame(master=root, width=750, height=600)
-    frame.pack()
+    # frame = Frame(master=root)
+    # frame.pack()
 
-    for x in dicts:
-        print(x)
+    chat_box = scrolledtext.ScrolledText(root, state=tkinter.DISABLED, cursor="arrow")
+    chat_box.pack(fill=tkinter.BOTH, expand=True)
 
-    start_options = dictionaries.answers["Start"].get_options()
+    show_options("Start", chat_box)
 
-    for option in start_options:
-        print(option)
-        option_button = Button(master=root, text=option, command=lambda: show_options(option, root))
-        option_button.pack()
     root.mainloop()
-
         
     
 def show_options(key, root):
@@ -26,18 +28,12 @@ def show_options(key, root):
 
     options = answer.get_options()
 
+    label = Label(master=root, text=answer.answer)
+    label.pack(pady=5)
+
     for option in options:
         button = Button(master=root, text=option, command=lambda: show_options(option, root))
-        button.pack()
+        button.pack(pady=2)
 
 
 chat()
-
-frame = Tk.frame(master=root, width=500, height=500, bg='gray')
-frame.pack()
-
-w = Label(root, text="Hello bois")
-
-w.pack()
-
-root.mainloop()
