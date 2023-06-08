@@ -2,11 +2,7 @@ from pyodbc import *
 
 
 class Database:
-    connection_string = ("Driver=SQL Server;"
-                        "Server=TEW-DEV03\\SQLEXPRESS;"
-                        "Database=Chatbot;"
-                        "Trusted_Connection=True;"
-                        )
+    connection_string = "Driver=SQL Server;Server=TEW-DEV03\\SQLEXPRESS;Database=Chatbot;Trusted_Connection=True;"
 
     def __init__(self):
         self.connection = connect(self.connection_string)
@@ -24,13 +20,12 @@ class Database:
                 print(message)
 
     def write(self, ticket):
-        print(ticket.CustomerId, ticket.ChatHistory)
+        print(ticket.ChatHistory)
         cursor = self.connection.cursor()
-        cursor.execute("INSERT INTO [dbo].[Chat] ([CustomerId], [ChatHistory]) VALUES (?, ?)", ticket.CustomerId, ticket.ChatHistory)
+        cursor.execute("INSERT INTO [dbo].[Chat] ([ChatHistory]) VALUES (?)", ticket.ChatHistory)
         cursor.commit()
 
 
 class Ticket:
-    def __init__(self, customer_id, chat_history):
-        self.CustomerId = customer_id
+    def __init__(self, chat_history):
         self.ChatHistory = chat_history

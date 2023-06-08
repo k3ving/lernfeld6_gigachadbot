@@ -12,8 +12,8 @@ chat_history = []
 def chat():
     root = Tk()
     root.title("Chatbot")
-    window_width = 500
-    window_height = 400
+    window_width = 700
+    window_height = 500
     root.geometry(f"{window_width}x{window_height}")
     root.resizable(False, False)
 
@@ -30,15 +30,16 @@ def chat():
     def on_mousewheel(event):
         canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
 
-    scrollable_frame.bind_all("<MouseWheel>", on_mousewheel)
-
-    canvas.configure(yscrollcommand=scrollbar.set)
+    canvas.bind_all("<MouseWheel>", on_mousewheel)
+    scrollable_frame.configure(width=700, height=500)
 
     container.pack(fill=BOTH, expand=True)
     canvas.pack(side=LEFT, fill=BOTH, expand=True)
-    scrollbar.pack(side=RIGHT, fill=BOTH)
 
-    canvas.create_window((0, 0), window=scrollable_frame, anchor=N)
+    canvas.configure(yscrollcommand=scrollbar.set)
+    scrollbar.pack(side=RIGHT, fill=Y)
+
+    canvas.create_window(window_width / 2, 0, window=scrollable_frame, anchor=N)
 
     show_options("Start", scrollable_frame)
 
@@ -47,6 +48,12 @@ def chat():
 
 def show_options(key, root):
     global button_group_count
+
+    if key != "Start":
+        chat_history.append(key)
+
+    if key in dictionaries.end_options_default:
+        create_ticket()
     
     # Gets answer with key(parameter) and dictionary
     
@@ -58,8 +65,10 @@ def show_options(key, root):
     
     # Defines master of object
 
-    label = Label(master=root, text=answer.answer)
+    label = Label(master=root, wraplength=500, justify=CENTER, text=answer.answer)
     label.pack(pady=5)
+
+    chat_history.append(answer.answer)
 
     button_group = []
     
@@ -77,10 +86,11 @@ def show_options(key, root):
     button_group_count += 1
     button_group_dictionary[button_group_count] = button_group
 
+    print(chat_history)
+
 # Implements functionality of button
     
 def button_click(option, button_group_id, root):
-    print(option)
     toggle_button_group(option, button_group_id)
     show_options(option, root)
 
@@ -101,7 +111,7 @@ def create_ticket():
     for message in chat_history:
         chat_history_string += f"{message};"
 
-    ticket = Ticket(2, chat_history_string)
+    ticket = Ticket(chat_history_string)
     db.write(ticket)
 
 
