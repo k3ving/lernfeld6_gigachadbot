@@ -25,6 +25,12 @@ answers = {
                                                                                                              
     "Netzwerk": Answer("Ein Netzwerk Problem? Welche der folgenden Dinge trifft zu?", ["Webseiten Probleme", "Verbindungsprobleme", "Anderes"]),
     "Datensicherheit": Answer("Ein Datensicherheit Problem? Welche der folgenden Dinge trifft zu?", ["Hacking Probleme", "Firewall Detection", "Anderes"]),
+        "Meldung": Answer("Haben Sie eine Meldung bekommen?", ["Ich habe eine Meldung bekommen", "Ich habe keine Meldung bekommen"]),
+            "Ich habe eine Meldung bekommen": Answer("Welche der folgenden Meldungen trat auf?", ["Ein Update ist verfügbar", "Ihre Sicherheit ist kompromittiert", "Verdächtige Aktivitäten"]),
+                "Ein Update ist verfügbar": Answer("Soll ich das dem Dienstleister mitteilen?", ["Zum Mitarbeiter weiterleiten", "Gespräch abbrechen", "Ticket erstellen"]),
+                "Ihre Sicherheit ist kompromittiert": Answer("Ok, ich bitte Sie unverzüglich den Dienstleister zu kontaktieren.", ["Zum Mitarbeiter weiterleiten", "Ticket erstellen"]),
+                "Verdächtige Aktivitäten": Answer("Ok, ich bitte Sie unverzüglich den Dienstleister zu kontaktieren.", ["Zum Mitarbeiter weiterleiten", "Ticket erstellen"]),
+            "Ich habe keine Meldung bekommen": Answer("Ich rate Ihnen das Sie Ihren Diensleister kontaktieren.", ["Zum Mitarbeiter weiterleiten", "Gespräch abbrechen", "Ticket erstellen"]),                                                                                                   
     "Authentifikation": Answer("Ein Authentifikation Problem? Welche der folgenden Dinge trifft zu?", ["Passwort vergessen", "Anderes"])
     "Anderes": Answer("Ich rate Ihnen sich an unser Support-Team zu wenden, bitte wählen sie eine der Kontaktoptionen.", ["Zum Mitarbeiter weiterleiten", "Gespräch abbrechen", "Ticket erstellen"]),
     "Zum Mitarbeiter weiterleiten": Answer("Bitte wählen Sie die Nummer 01234567890 um mit einem unserer Mitarbeiter in Verbindung zu treten"),
