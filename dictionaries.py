@@ -35,7 +35,7 @@ answers = {
             "Unterwegs": Answer("Wie zum Henker schaffen Sie es dann sich mit dem Chatbot zu verbinden?"),
             "Firma": Answer("Ich bitte Sie unverzüglich unser Support-Team zu kontaktieren", ["Zum Mitarbeiter weiterleiten", "Ticket erstellen"]),
             "Homeoffice": Answer("Prüfen Sie Ihre Internetverbindung, wenn diese nicht funktioniert trennen Sie Ihren Router vom Strom für 5-10 Minuten.", ["Verbindung geht nicht", "Funktioniert wieder"]),                                                                                               
-                   "Verbindung geht nicht": Answer("Bitte kontaktieren Sie Ihren Provider und prüfen ob es Störungen in Ihrer Gegend bestehen"),        
+                   "Verbindung geht nicht": Answer("Bitte kontaktieren Sie Ihren Provider und prüfen ob es Störungen in Ihrer Gegend gibt"),        
                                                                                                              
     "Datensicherheit": Answer("Ein Datensicherheit Problem? Welche der folgenden Dinge trifft zu?", ["Hacking Probleme", "Firewall Detection", "Anderes"]),
         "Meldung": Answer("Haben Sie eine Meldung bekommen?", ["Ich habe eine Meldung bekommen", "Ich habe keine Meldung bekommen"]),
@@ -43,14 +43,14 @@ answers = {
                 "Ein Update ist verfügbar": Answer("Soll ich das dem Support-Team mitteilen?", ["Zum Mitarbeiter weiterleiten", "Gespräch abbrechen", "Ticket erstellen"]),
                 "Ihre Sicherheit ist kompromittiert": Answer("Ich bitte Sie unverzüglich unser Support-Team zu kontaktieren", ["Zum Mitarbeiter weiterleiten", "Ticket erstellen"]),
                 "Verdächtige Aktivitäten": Answer("Ich bitte Sie unverzüglich unser Support-Team zu kontaktieren", ["Zum Mitarbeiter weiterleiten", "Ticket erstellen"]),
-            "Ich habe keine Meldung bekommen": Answer("Ich bitte Sie unverzüglich unser Support-Team zu kontaktieren", ["Zum Mitarbeiter weiterleiten", "Gespräch abbrechen", "Ticket erstellen"]), 
+            "Ich habe keine Meldung bekommen": Answer("Ich bitte Sie unverzüglich unser Support-Team zu kontaktieren", ["Zum Mitarbeiter weiterleiten", "Ticket erstellen"]), 
                                                                                                              
     "Authentifikation": Answer("Ein Authentifikation Problem? Welche der folgenden Dinge trifft zu?", ["Passwort vergessen", "Anderes"]),
         "Passwort vergessen": Answer("Alles klar! Folgen sie diesem Link um Ihr Passwort zurückzusetzen: https://firma.de/password_reset"),    
                                                                                                              
     "Anderes": Answer("Ich rate Ihnen sich an unser Support-Team zu wenden, bitte wählen sie eine der Kontaktoptionen.", ["Zum Mitarbeiter weiterleiten", "Gespräch abbrechen", "Ticket erstellen"]),
-    "Zum Mitarbeiter weiterleiten": Answer("Bitte wählen Sie die Nummer 01234567890 um mit einem unserer Mitarbeiter in Verbindung zu treten"),
-    "Gespräch abbrechen": Answer("Alles klar, Sie können uns unter 01234567890 oder unter der Mail info@firma.de erreichen wenn Sie es sich anders überlegen"),
-    "Ticket erstellen": Answer("Ein Ticket mit Ihrem Problem wurde erstellt, ein Mitarbeiter wird sich dann mit Ihnen in Verbindung setzen"),
-    "Funktioniert wieder": Answer("Freut mich das Ich Ihnen helfen konnte."),                                 
+    "Zum Mitarbeiter weiterleiten": Answer("Bitte wählen Sie die Nummer 01234567890 um mit einem unserer Mitarbeiter in Verbindung zu setzen, Tschuess und schoenen Tag noch."),
+    "Gespräch abbrechen": Answer("Alles klar, Sie können uns unter 01234567890 oder unter der Mail info@firma.de erreichen wenn Sie es sich anders überlegen, Tschuess und schoenen Tag noch."),
+    "Ticket erstellen": Answer("Ein Ticket mit Ihrem Problem wurde erstellt, ein Mitarbeiter wird sich dann mit Ihnen in Verbindung setzen, Tschuess und schoenen Tag noch."),
+    "Funktioniert wieder": Answer("Freut mich das Ich Ihnen helfen konnte., Tschuess und schoenen Tag noch."),                                 
 }
