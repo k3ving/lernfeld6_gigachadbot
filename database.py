@@ -11,6 +11,21 @@ class Database:
     def __init__(self):
         self.connection = connect(self.connection_string)
 
+    def read(self, id):
+        cursor = self.connection.cursor()
+
+        cursor.execute("SELECT * FROM [dbo].[Chat] WHERE [Id] = ?", id)
+        for x in cursor.fetchall():
+            chat_history = x.ChatHistory
+            split_chat_history = chat_history.split(';')
+
+            for message in split_chat_history:
+                print(message)
+
+    def write(self, ticket):
+        cursor = self.connection.cursor()
+        cursor.execute("INSERT INTO [dbo].[Chat] ([CustomerId, ChatHistory]) VALUES (?, ?)", ticket.CustomerId, ticket.ChatHistory)
+
 
 class Ticket:
     def __init__(self, customer_id, chat_history):

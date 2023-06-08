@@ -1,5 +1,6 @@
 import tkinter
 import dictionaries
+from database import *
 from tkinter import *
 from tkinter import scrolledtext
 
@@ -8,6 +9,8 @@ button_group_count = 0
 
 
 def chat():
+    db = Database()
+    db.read(2)
     root = Tk()
     root.title("Chatbot")
     window_width = 500
