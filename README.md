@@ -1,6 +1,10 @@
 # lernfeld6_gigachadbot
 A gigachad who can anwser all your questions.
 
+# How it works
+
+Uses Tkinter for drawing the GUI in function ```chat``` and uses a class answer for answer and their options. 
+
 # Installation on Linux
 
 - Debian: ```apt-get install python-tk```
