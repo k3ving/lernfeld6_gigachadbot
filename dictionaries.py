@@ -3,7 +3,7 @@ from answer import *
 end_options_default = ["Zum Mitarbeiter weiterleiten", "Gespräch abbrechen", "Ticket erstellen"]
 
 answers = {
-    "Start": Answer("Hallo ich bin der Chatbot. Mit welchem Problem kann ich Ihnen weiterhelfen?", ["Software", "Hardware", "Netzwerk", "Datensicherheit", "Authentifikation", "Andere"]),
+    "Start": Answer("Hallo ich bin der Chatbot. Mit welchem Problem kann ich Ihnen weiterhelfen?", ["Software", "Hardware", "Netzwerk", "Datensicherheit", "Authentifikation", "Anderes"]),
     "Software": Answer("Ein Software Problem? Welche der folgenden Dinge trifft zu?", ["Programm abgestürzt", "Update Problem", "Bug", "Programm ist langsam", "Anderes"]),
         "Programm abgestürzt": Answer("Haben Sie versucht das Programm oder Ihren Rechner neuzustarten?" , ["Funktioniert wieder", "Programm hängt immer noch"]),
             "Programm hängt immer noch": Answer("Ich rate Ihnen das Sie unser Support-Team kontaktieren." , ["Zum Mitarbeiter weiterleiten", "Gespräch abbrechen", "Ticket erstellen"]),
