@@ -7,6 +7,7 @@ from tkinter import scrolledtext
 button_group_dictionary = {}
 button_group_count = 0
 
+# Creates window
 
 def chat():
     db = Database()
@@ -28,15 +29,24 @@ def chat():
 
 def show_options(key, root):
     global button_group_count
+    
+    # Gets answer with key(parameter) and dictionary
+    
     answer = dictionaries.answers[key]
+    
+    # Gets option from answer
 
     options = answer.get_options()
+    
+    # Defines master of object
 
     label = Label(master=root, text=answer.answer)
     label.pack(pady=5)
 
     button_group = []
-
+    
+    # Uses loop for drawing buttons
+    
     for option in options:
         button = Button(master=root,
                         text=option,
@@ -49,7 +59,8 @@ def show_options(key, root):
     button_group_count += 1
     button_group_dictionary[button_group_count] = button_group
 
-
+# Implements functionality of button
+    
 def button_click(option, button_group_id, root):
     print(option)
     toggle_button_group(option, button_group_id)
