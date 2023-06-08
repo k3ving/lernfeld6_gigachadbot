@@ -18,7 +18,7 @@ answers = {
             "Neustart funktioniert nicht": Answer("Ihr PC hat womöglich einen schweren Defekt. Ich bitte Sie unverzüglich unser Support-Team zu kontaktieren", ["Zum Mitarbeiter weiterleiten", "Gespräch abbrechen", "Ticket erstellen"]),
         "Serverabsturz": Answer("Ich bitte Sie unverzüglich unser Support-Team zu kontaktieren", ["Zum Mitarbeiter weiterleiten", "Ticket erstellen"]),
         "Druckerproblem": Answer("Gibt der Drucker einen Fehlercode an oder leuchtet er in einer bestimmten Weise?", ["Ja der Drucker macht etwas", "Nein der Drucker macht nichts"]), 
-            "Ja der Drucker macht etwas": Answer("Ich rate Ihnen das Sie unser Support-Team kontaktieren.", [, ["Zum Mitarbeiter weiterleiten", "Gespräch abbrechen", "Ticket erstellen"]),
+            "Ja der Drucker macht etwas": Answer("Ich rate Ihnen das Sie unser Support-Team kontaktieren.", ["Zum Mitarbeiter weiterleiten", "Gespräch abbrechen", "Ticket erstellen"]),
             "Nein, der Drucker macht nichts": Answer("Taucht das Gerät im Geräte-Manager auf? Wenn ja trennen Sie den Drucker 10-15 Minuten vom Strom", ["Druckerproblem bleibt bestehen", "Funktioniert wieder"]), 
                 "Druckerproblem bleibt bestehen": Answer("Ich rate Ihnen das Sie unser Support-Team kontaktieren.", ["Zum Mitarbeiter weiterleiten", "Gespräch abbrechen", "Ticket erstellen"]),                                                                                            
         "Physische Schaeden": Answer("Ich rate Ihnen das Sie unser Support Team kontaktieren.", ["Zum Mitarbeiter weiterleiten", "Gespräch abbrechen", "Ticket erstellen"]),
