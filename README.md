@@ -11,7 +11,7 @@ A gigachad who can anwser all your questions.
 
 # Installation on Windows
 
-Install Python [here] (https://www.python.org/downloads/).
+Install Python [here](https://www.python.org/downloads/).
 
 # Clone the repo
 
