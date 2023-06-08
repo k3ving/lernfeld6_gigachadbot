@@ -19,4 +19,5 @@ Install Python [here](https://www.python.org/downloads/).
 
 # Run the programm 
 ```cd lernfeld6_gigachadbot```
+
 ```python main.py```
