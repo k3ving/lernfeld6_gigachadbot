@@ -2,16 +2,14 @@ import tkinter
 import dictionaries
 from database import *
 from tkinter import *
-from tkinter import scrolledtext
 
 button_group_dictionary = {}
 button_group_count = 0
+chat_history = []
 
 # Creates window
 
 def chat():
-    db = Database()
-    db.read(2)
     root = Tk()
     root.title("Chatbot")
     window_width = 500
@@ -19,10 +17,30 @@ def chat():
     root.geometry(f"{window_width}x{window_height}")
     root.resizable(False, False)
 
-    chat_box = scrolledtext.ScrolledText(root, state=tkinter.DISABLED, cursor="arrow")
-    chat_box.pack(fill=tkinter.BOTH, expand=True)
+    container = Frame(root)
+    canvas = Canvas(container)
+    scrollbar = Scrollbar(container, orient=VERTICAL, command=canvas.yview)
+    scrollable_frame = Frame(canvas)
 
-    show_options("Start", chat_box)
+    scrollable_frame.bind(
+        "<Configure>",
+        lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
+    )
+
+    def on_mousewheel(event):
+        canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+
+    scrollable_frame.bind_all("<MouseWheel>", on_mousewheel)
+
+    canvas.configure(yscrollcommand=scrollbar.set)
+
+    container.pack(fill=BOTH, expand=True)
+    canvas.pack(side=LEFT, fill=BOTH, expand=True)
+    scrollbar.pack(side=RIGHT, fill=BOTH)
+
+    canvas.create_window((0, 0), window=scrollable_frame, anchor=N)
+
+    show_options("Start", scrollable_frame)
 
     root.mainloop()
 
@@ -74,6 +92,17 @@ def toggle_button_group(option, button_group_id):
         if button["text"] == option:
             button.configure(bg="#b3ffb3")
         button.configure(state=tkinter.DISABLED)
+
+
+def create_ticket():
+    db = Database()
+    chat_history_string = ""
+
+    for message in chat_history:
+        chat_history_string += f"{message};"
+
+    ticket = Ticket(2, chat_history_string)
+    db.write(ticket)
 
 
 chat()
